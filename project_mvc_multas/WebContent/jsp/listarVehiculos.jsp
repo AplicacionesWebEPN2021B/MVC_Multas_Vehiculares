@@ -15,7 +15,7 @@
 	<%@include file="../templates/banner_interno.html" %>
 
 	<div class="wrapper">
-		<h1>Listado de Personas</h1>
+		<h1>Listado de Vehiculos</h1>
 		
 		<div>
 			<a href="RegistrarVehiculoController">Nuevo Vehiculo</a>
