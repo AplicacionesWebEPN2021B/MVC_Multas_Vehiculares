@@ -105,7 +105,7 @@ public class VehiculoDAO {
 			}
 		}
 		
-		public void eliminar(int idVehiculo) { 
+		public static void eliminar(int idVehiculo) { 
 			try {
 				PreparedStatement pstmt =null;
 				pstmt = ConexionBDD.getConexion().prepareStatement(SQL_DELETE);
