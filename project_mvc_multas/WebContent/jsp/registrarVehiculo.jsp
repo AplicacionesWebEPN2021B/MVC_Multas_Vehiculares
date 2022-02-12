@@ -38,8 +38,7 @@
 				<input type="text" name="txtPropietario" required class="form-control">
 				<br>			
 				<input type="submit" value="Registrar Vehículo" class="btn btn-primary">
-				
-			</fieldset>	
+			</fieldset>				
 	</form>
 	</div>
 	

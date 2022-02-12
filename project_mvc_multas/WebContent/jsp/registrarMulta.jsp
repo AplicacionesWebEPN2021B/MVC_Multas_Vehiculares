@@ -15,7 +15,7 @@
 <body>
 <%@include file="../templates/banner_interno.html" %>
 <div class="container-fluid" style="width: 500px; margin-top: 100px">
-<h1>Ingreso Valores a Pagar</h1>
+<h2>Ingreso Valores a Pagar</h2>
 	<form action="RegistrarMultaController?idVehiculo=${vehiculo.idVehiculo}" method="POST">
 		<label for="txtPlaca">PLACA: </label>
 		<input type="text" name="txtPlaca" value="${vehiculo.placa}" readonly="readonly" class="form-control"><br>
@@ -25,7 +25,7 @@
 		<input type="number" name="txtValor" required="required" class="form-control" placeholder="Ej. 460"><br>
 		<label for="txtAnio">AÑO</label>
 		<input type="text" name="txtAnio" required="required" class="form-control" placeholder="Ej. 2022"><br>
-		<input type="submit" value="Resgistrar Multa" class="btn btn-primary">
+		<input type="submit" value="Registrar Multa" class="btn btn-primary">
 	</form>
 </div>
 
