@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registrar Vehiculo</title>
+<title>Registrar Vehículo</title>
 
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -14,32 +14,34 @@
 </head>
 <body>
 	<%@include file="../templates/banner_interno.html" %>
-	<h1>Registrar Vehiculo</h1>
+	<div class="container-fluid" style="width: 500px; margin-top: 25px">
+		<h2>Registrar Vehículo</h2>
 	
-	<form method="POST" action="RegistrarVehiculoController">
-		<fieldset>
-			<label for="txtPlaca">PLACA:</label>
-			<input type="text" name="txtPlaca" required>
-			<br>
-			<label for="txtMarca">MARCA:</label>
-			<input type="text" name="txtMarca" required>
-			<br>
-			<label for="txtAnio">AÑO:</label>
-			<input type="text" name="txtAnio" pattern="\d{4}$" required>
-			<br>
-			<label for="txtModelo">MODELO:</label>
-			<input type="text" name="txtModelo" required>
-			<br>
-			<label for="txtChasis">CHASIS:</label>
-			<input type="text" name="txtChasis" required>
-			<br>
-			<label for="txtPropietario">PROPIETARIO:</label>
-			<input type="text" name="txtPropietario" required>
-			<br>			
-			<input type="submit" value="Guardar">
-			
-		</fieldset>	
+		<form method="POST" action="RegistrarVehiculoController">
+			<fieldset>
+				<label for="txtPlaca">PLACA:</label>
+				<input type="text" name="txtPlaca" required class="form-control">
+				<br>
+				<label for="txtMarca">MARCA:</label>
+				<input type="text" name="txtMarca" required class="form-control">
+				<br>
+				<label for="txtAnio">AÑO:</label>
+				<input type="text" name="txtAnio" pattern="\d{4}$" required class="form-control">
+				<br>
+				<label for="txtModelo">MODELO:</label>
+				<input type="text" name="txtModelo" required class="form-control">
+				<br>
+				<label for="txtChasis">CHASIS:</label>
+				<input type="text" name="txtChasis" required class="form-control">
+				<br>
+				<label for="txtPropietario">PROPIETARIO:</label>
+				<input type="text" name="txtPropietario" required class="form-control">
+				<br>			
+				<input type="submit" value="Registrar Vehículo" class="btn btn-primary">
+				
+			</fieldset>	
 	</form>
+	</div>
 	
 	
 <!-- JavaScript Bundle with Popper -->

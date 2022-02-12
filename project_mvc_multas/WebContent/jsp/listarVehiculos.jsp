@@ -15,34 +15,36 @@
 	<%@include file="../templates/banner_interno.html" %>
 
 	<div class="wrapper">
-		<h1>Listado de Vehiculos</h1>
-		
+		<h1>Listado de Vehículos</h1>
 		<div>
-			<a href="RegistrarVehiculoController">Nuevo Vehiculo</a>
+			<a href="RegistrarVehiculoController"class="btn btn-primary m-2">Nuevo Vehículo</a>
 		</div>
-		<table class="tabla" >
-			<caption>Lista de Vehiculos de la BDD</caption>
-            <tr>            	
-                <th>ID</th>
-                <th>PLACA</th>
-                <th>MARCA</th>
-                <th>AñO</th>
-                <th>MODELO</th>
-                <th>CHASIS</th>
-                <th>PROPIETARIO</th>
-                <th>ACCIONES</th>
-            </tr>          	
-	       
+		<table class="table m-2">
+			<caption>Vehículos registrados</caption>
+			<thead>
+	            <tr>            
+	                <th>PLACA</th>
+	                <th>MARCA</th>
+	                <th>AÑO</th>
+	                <th>MODELO</th>
+	                <th>CHASIS</th>
+	                <th>PROPIETARIO</th>
+	                <th>ACCIONES</th>
+	            </tr>          	
+	       </thead>
 	        <c:forEach items="${listaVehiculos}" var="vehiculo">
-	         <tr>
-	        	<td>${vehiculo.idVehiculo}</td>	           
+	         <tr>          
                 <td>${vehiculo.placa}</td>	
                 <td>${vehiculo.marca}</td>	
                 <td>${vehiculo.anio}</td>	
                 <td>${vehiculo.modelo}</td>	
                 <td>${vehiculo.chasis}</td>	
                 <td>${vehiculo.propietario}</td>	
-                <td> <a href="ListarMultasController?idVehiculo=${vehiculo.idVehiculo}">Ver multas</a> | <a href="ActualizarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Actualizar</a> | <a href="EliminarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Eliminar</a></td>
+                <td> 
+                	<a class="btn btn-outline-info btn-sm" href="ListarMultasController?idVehiculo=${vehiculo.idVehiculo}">Ver multas</a> | 
+                	<a class="btn btn-outline-warning btn-sm" href="ActualizarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Actualizar</a> | 
+                	<a class="btn btn-outline-danger btn-sm" href="EliminarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Eliminar</a>
+                </td>
              </tr>
 	        </c:forEach>                      
 			

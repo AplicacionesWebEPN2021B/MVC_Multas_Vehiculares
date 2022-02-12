@@ -14,33 +14,35 @@
 </head>
 <body>
 	<%@include file="../templates/banner_interno.html" %>
-	<h1>Actualizar Vehiculo</h1>
-	
-	<form method="POST" action="ActualizarVehiculoController">
-		<fieldset>
-			<input type="hidden" name="txtVehiculo" value="${idVehiculo}">
-			<label for="txtPlaca">PLACA:</label>
-			<input type="text" name="txtPlaca" value="${placa}" required>
-			<br>
-			<label for="txtMarca">MARCA:</label>
-			<input type="text" name="txtMarca" value="${marca}" required>
-			<br>
-			<label for="txtAnio">AÑO:</label>
-			<input type="text" name="txtAnio" value="${anio}" pattern="\d{4}$" required>
-			<br>
-			<label for="txtModelo">MODELO:</label>
-			<input type="text" name="txtModelo" value="${modelo}" required>
-			<br>
-			<label for="txtChasis">CHASIS:</label>
-			<input type="text" name="txtChasis" value="${chasis}" required>
-			<br>
-			<label for="txtPropietario">PROPIETARIO:</label>
-			<input type="text" name="txtPropietario" value="${propietario}" required>
-			<br>			
-			<input type="submit" value="Guardar">
-			
-		</fieldset>	
-	</form>
+	<div class="container-fluid" style="width: 500px; margin-top: 25px">
+		<h2>Actualizar Vehículo</h2>
+		
+		<form method="POST" action="ActualizarVehiculoController">
+			<fieldset>
+				<input type="hidden" name="txtVehiculo" value="${idVehiculo}">
+				<label for="txtPlaca">PLACA:</label>
+				<input type="text" name="txtPlaca" value="${placa}" required readonly="readonly" class="form-control">
+				<br>
+				<label for="txtMarca">MARCA:</label>
+				<input type="text" name="txtMarca" value="${marca}" required class="form-control">
+				<br>
+				<label for="txtAnio">AÑO:</label>
+				<input type="text" name="txtAnio" value="${anio}" pattern="\d{4}$" required class="form-control">
+				<br>
+				<label for="txtModelo">MODELO:</label>
+				<input type="text" name="txtModelo" value="${modelo}" required class="form-control">
+				<br>
+				<label for="txtChasis">CHASIS:</label>
+				<input type="text" name="txtChasis" value="${chasis}" required class="form-control">
+				<br>
+				<label for="txtPropietario">PROPIETARIO:</label>
+				<input type="text" name="txtPropietario" value="${propietario}" required class="form-control">
+				<br>			
+				<input type="submit" value="Actualizar Vehículo" class="btn btn-primary">
+				
+			</fieldset>	
+		</form>
+	</div>
 	
 	
 <!-- JavaScript Bundle with Popper -->

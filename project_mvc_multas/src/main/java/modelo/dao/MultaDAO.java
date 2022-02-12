@@ -11,7 +11,7 @@ import modelo.entidades.Multa;
 
 public class MultaDAO {
 	//C
-	private static final String SQL_INSERT="INSERT INTO  MULTA (idVehiculo,valor,anio) VALUES(?,?,?)";
+	private static final String SQL_INSERT="INSERT INTO  MULTA (idVehiculo,valor,anio,descripcion) VALUES(?,?,?,?)";
 	//R
 	private static final String SQL_SELECT_ID_VEHICULO="SELECT * FROM MULTA WHERE idVehiculo = ?";
 	
@@ -27,7 +27,7 @@ public class MultaDAO {
 			prstm.setInt(1, idVehiculo);
 			rs = prstm.executeQuery();
 			while(rs.next()) {
-				Multa multa = new Multa(rs.getInt("idMulta"), rs.getInt("idVehiculo"), rs.getDouble("valor"), rs.getString("anio"));
+				Multa multa = new Multa(rs.getInt("idMulta"), rs.getInt("idVehiculo"), rs.getDouble("valor"), rs.getString("anio"), rs.getString("descripcion"));
 				multas.add(multa);
 			}
 		} catch (SQLException e) {
@@ -43,6 +43,7 @@ public class MultaDAO {
 			pstmt.setInt(1, multa.getIdVehiculo());
 			pstmt.setDouble(2, multa.getValor());
 			pstmt.setString(3, multa.getAnio());
+			pstmt.setString(4, multa.getDescripcion());
 			
 			int filas = pstmt.executeUpdate();
 			
