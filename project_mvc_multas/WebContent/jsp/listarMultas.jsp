@@ -17,8 +17,10 @@
 	
 	<div class="wrapper">
 		<h2>Deudas vehículo: ${placa}</h2>
-		<a href="ListarVehiculosController" class="btn btn-outline-dark m-2">Regresar</a>
-		<a href="RegistrarMultaController?idVehiculo=${vehiculo.idVehiculo}"  class="btn btn-primary  m-2">Nueva Multa</a>
+		<div>
+			<a href="ListarVehiculosController" class="btn btn-outline-dark m-2">Regresar</a>
+			<a href="RegistrarMultaController?idVehiculo=${vehiculo.idVehiculo}"  class="btn btn-primary  m-2">Nueva Multa</a>
+		</div>
 		<c:if test="${multas.size()==0}">
 			<div>
 				Este vehículo no tiene multas
