@@ -26,8 +26,7 @@ public class ActualizarVehiculoController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		VehiculoDAO vehiculoDAO = new VehiculoDAO();
-		Vehiculo v = vehiculoDAO.getVehiculo(Integer.parseInt(request.getParameter("idVehiculo")));
+		Vehiculo v = VehiculoDAO.getVehiculo(Integer.parseInt(request.getParameter("idVehiculo")));
 		request.setAttribute("idVehiculo", Integer.parseInt(request.getParameter("idVehiculo")));
 		request.setAttribute("placa", v.getPlaca());
 		request.setAttribute("marca", v.getMarca());
