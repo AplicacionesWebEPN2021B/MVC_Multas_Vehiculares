@@ -17,26 +17,28 @@
 	
 	<div class="wrapper">
 		<h2>Deudas vehículo: ${placa}</h2>
-		<a href="ListarVehiculosController">Regresar</a>
-		<a href="RegistrarMultaController?idVehiculo=${vehiculo.idVehiculo}">Nueva Multa</a>
+		<a href="ListarVehiculosController" class="btn btn-outline-dark m-2">Regresar</a>
+		<a href="RegistrarMultaController?idVehiculo=${vehiculo.idVehiculo}"  class="btn btn-primary  m-2">Nueva Multa</a>
 		<c:if test="${multas.size()==0}">
 			<div>
 				Este vehículo no tiene multas
 			</div>
 		</c:if>
 		<c:if test="${multas.size()>0}">
-			<table class="tabla">
+			<table class="table m-2">
 				<caption>Multas del vehículo con placa: ${vehiculo.placa}</caption>
-				<thead>
-					<th>Descripción del rubro</th>
-					<th>Valor</th>
-					<th>Año</th>
+				<thead class="thead-dark">
+					<tr>
+						<th>DESCRIPCIÓN DEL RUBRO</th>
+						<th>VALOR</th>
+						<th>AÑO</th>
+					</tr>
 				</thead>
 				
 				<tbody>
 					<c:forEach items="${multas}" var="multa">
 						<tr>
-							<td>Impuesto Rodaje</td>
+							<td>${multa.descripcion}</td>
 							<td>${multa.valor}</td>
 							<td>${multa.anio}</td>
 						</tr>

@@ -10,27 +10,34 @@ public class Multa implements Serializable {
 	int idVehiculo;
 	double valor;
 	String anio;
+	String descripcion;
 	
 	public Multa() {}
 
-	public Multa(int idVehiculo, double valor, String anio) {
+	public Multa(int idVehiculo, double valor, String anio, String descripcion) {
 		super();
 		this.idVehiculo = idVehiculo;
 		this.valor = valor;
 		this.anio = anio;
+		this.descripcion = descripcion;
 	}
 
-
-
-	public Multa(int idMulta, int idVehiculo, double valor, String anio) {
+	public Multa(int idMulta, int idVehiculo, double valor, String anio, String descripcion) {
 		super();
 		this.idMulta = idMulta;
 		this.idVehiculo = idVehiculo;
 		this.valor = valor;
 		this.anio = anio;
+		this.descripcion = descripcion;
 	}
 
+	public String getDescripcion() {
+		return descripcion;
+	}
 
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
 	public int getIdMulta() {
 		return idMulta;

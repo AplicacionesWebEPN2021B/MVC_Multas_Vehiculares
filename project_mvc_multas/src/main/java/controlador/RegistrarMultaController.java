@@ -31,8 +31,9 @@ public class RegistrarMultaController extends HttpServlet {
 		int idVehiculo = Integer.parseInt(request.getParameter("idVehiculo"));
 		double valor = Double.parseDouble(request.getParameter("txtValor"));
 		String anio = request.getParameter("txtAnio");
+		String descripcion = request.getParameter("txtDescripcion");
 		
-		MultaDAO.insertar(new Multa(idVehiculo, valor, anio));
+		MultaDAO.insertar(new Multa(idVehiculo, valor, anio, descripcion));
 		response.sendRedirect("ListarMultasController?idVehiculo="+idVehiculo);
 	}
 
