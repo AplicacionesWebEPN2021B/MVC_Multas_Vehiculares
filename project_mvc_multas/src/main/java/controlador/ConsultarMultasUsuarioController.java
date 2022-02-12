@@ -20,7 +20,7 @@ import modelo.entidades.Vehiculo;
 /**
  * Servlet implementation class ConsultarMutasUsuarioController
  */
-@WebServlet("/ConsultarMutasUsuarioController")
+@WebServlet("/ConsultarMultasUsuarioController")
 public class ConsultarMultasUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
