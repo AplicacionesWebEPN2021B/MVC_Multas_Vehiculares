@@ -46,7 +46,7 @@ public class VehiculoDAO {
 		}
 		
 		
-		public Vehiculo getVehiculo(int idVehiculo) {
+		public static Vehiculo getVehiculo(int idVehiculo) {
 			Vehiculo v = null;
 			
 			ResultSet rs = null;

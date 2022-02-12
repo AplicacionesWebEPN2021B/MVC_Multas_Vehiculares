@@ -42,7 +42,7 @@
                 <td>${vehiculo.modelo}</td>	
                 <td>${vehiculo.chasis}</td>	
                 <td>${vehiculo.propietario}</td>	
-                <td> <a href="ListarMultasController?idVehiculo=${vehiculo.idVehiculo}">Ver deudas</a> | <a href="ActualizarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Actualizar</a> | <a href="EliminarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Eliminar</a></td>
+                <td> <a href="ListarMultasController?idVehiculo=${vehiculo.idVehiculo}">Ver multas</a> | <a href="ActualizarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Actualizar</a> | <a href="EliminarVehiculoController?idVehiculo=${vehiculo.idVehiculo}">Eliminar</a></td>
              </tr>
 	        </c:forEach>                      
 			
