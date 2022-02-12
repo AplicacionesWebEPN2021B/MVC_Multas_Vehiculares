@@ -15,9 +15,9 @@
 	<%@include file="../templates/banner_interno.html" %>
 
 	<div class="wrapper">
-		<h1>Listado de Vehiculos</h1>
+		<h1>Listado de Vehículos</h1>
 		<div>
-			<a href="RegistrarVehiculoController"class="btn btn-primary m-2">Nuevo Vehiculo</a>
+			<a href="RegistrarVehiculoController"class="btn btn-primary m-2">Nuevo Vehículo</a>
 		</div>
 		<table class="table m-2">
 			<caption>Vehículos registrados</caption>

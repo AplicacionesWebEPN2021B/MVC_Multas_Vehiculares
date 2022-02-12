@@ -8,11 +8,3 @@
 		min-height: 100%;
 		padding: 20px;
 	}
-	
-	.tabla{
-	  table-layout: fixed;
-	  border-collapse: collapse;
-	}
-	
-	.tabla td{border: 3px solid black;}
-	.tabla th{border: 3px solid black;}

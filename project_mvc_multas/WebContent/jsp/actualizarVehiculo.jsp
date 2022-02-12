@@ -15,13 +15,13 @@
 <body>
 	<%@include file="../templates/banner_interno.html" %>
 	<div class="container-fluid" style="width: 500px; margin-top: 25px">
-		<h1>Actualizar Vehiculo</h1>
+		<h2>Actualizar Vehículo</h2>
 		
 		<form method="POST" action="ActualizarVehiculoController">
 			<fieldset>
 				<input type="hidden" name="txtVehiculo" value="${idVehiculo}">
 				<label for="txtPlaca">PLACA:</label>
-				<input type="text" name="txtPlaca" value="${placa}" required class="form-control">
+				<input type="text" name="txtPlaca" value="${placa}" required readonly="readonly" class="form-control">
 				<br>
 				<label for="txtMarca">MARCA:</label>
 				<input type="text" name="txtMarca" value="${marca}" required class="form-control">
