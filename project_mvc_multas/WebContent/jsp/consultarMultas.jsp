@@ -21,12 +21,13 @@
 	<form method="POST" action="ConsultarMultasUsuarioController">
 		<fieldset>
 			<h3>Seleccione tipo de b&uacute;squeda</h3>
-			<input type="radio" name="placaChasis" value="r"> Placa <input type="radio" name="placaChasis" value="r1"> Chasis
+			<input type="radio" name="placaChasis" value="r"> Placa 
+			<input type="radio" name="placaChasis" value="r1"> Chasis
 			<br>
 			<label for="txtDato">Ingrese dato</label>
 			<br>
 			<input type="text" name="txtPlacaChasis">
-			<input type="submit" name="consultar">
+			<input type="submit" name="consultar" value="consultar" >
 			
 			
 		</fieldset>

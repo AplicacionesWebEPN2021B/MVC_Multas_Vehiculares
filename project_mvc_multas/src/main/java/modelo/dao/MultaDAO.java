@@ -11,15 +11,15 @@ import modelo.entidades.Multa;
 
 public class MultaDAO {
 	//C
-	private static final String SQL_INSERT="INSERT INTO  MULTA (idVehiculo,valor,anio,descripcion) VALUES(?,?,?,?)";
+	private static final String SQL_INSERT="INSERT INTO  multa (idVehiculo,valor,anio,descripcion) VALUES(?,?,?,?)";
 	//R
-	private static final String SQL_SELECT_ID_VEHICULO="SELECT * FROM MULTA WHERE idVehiculo = ?";
+	private static final String SQL_SELECT_ID_VEHICULO="SELECT * FROM multa WHERE idVehiculo = ?";
 	
 	public MultaDAO() {}
 	
 	public static List<Multa> getMultas(int idVehiculo){
 		List<Multa> multas = new ArrayList<Multa>();
-		
+		System.out.println("holaa");
 		try {
 			ResultSet rs = null;
 			PreparedStatement prstm = null;
