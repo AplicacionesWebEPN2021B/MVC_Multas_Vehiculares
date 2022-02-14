@@ -18,7 +18,7 @@
 </head>
 <body>
 	<H1>Consulta de multas pendientes</H1>
-	<form method="POST" action="LoginController">
+	<form method="POST" action="ConsultarMultasUsuarioController">
 		<fieldset>
 			<h3>Seleccione tipo de b&uacute;squeda</h3>
 			<input type="radio" name="placaChasis" value="r"> Placa <input type="radio" name="placaChasis" value="r1"> Chasis

@@ -1,1 +1,7 @@
 /.metadata/
+Servers/apache-tomcat-8.5.73 at localhost-config/catalina.policy
+Servers/apache-tomcat-8.5.73 at localhost-config/catalina.properties
+Servers/apache-tomcat-8.5.73 at localhost-config/context.xml
+Servers/apache-tomcat-8.5.73 at localhost-config/server.xml
+Servers/apache-tomcat-8.5.73 at localhost-config/tomcat-users.xml
+Servers/apache-tomcat-8.5.73 at localhost-config/web.xml
