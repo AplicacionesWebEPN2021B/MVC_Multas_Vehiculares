@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -62,8 +63,13 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 					request.setAttribute("multasUsuario", multaByChasis);
 					request.getRequestDispatcher("/jsp/listarMultasUsuario.jsp").forward(request, response);
 					
-				}else {
-					response.sendRedirect("../jsp/consultarMultas.jsp");
+				}else if(vehiculoPlaca == null || opcion.equals("r") || vehiculoChasis == null){
+					response.sendRedirect("/jsp/consultarMultasUsuario.jsp");
+					String someMessage = "Ingrese porfavor lo datos correctos";
+					PrintWriter out = response.getWriter();
+					out.print("<html><head>");
+					out.print("<script type=\"text/javascript\">alert(" + someMessage + ");</script>");
+					out.print("</head><body></body></html>");
 				}
 	}
 

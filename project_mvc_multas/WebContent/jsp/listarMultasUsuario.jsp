@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
-	<%@include file="../templates/banner_interno.html" %>
+	<%@include file="../templates/banner_usuario.html" %>
 	
 	<div class="wrapper">
 		<h2>Deudas vehículo: ${usuario}</h2>
