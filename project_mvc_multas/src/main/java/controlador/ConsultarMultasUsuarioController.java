@@ -42,12 +42,10 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 				String opcion = request.getParameter("placaChasis");
 				
 				
-				
 				//2.- Llamo al modelo para conocer si puedo autenticar 
 				
 				Vehiculo vehiculoPlaca = VehiculoDAO.getVehiculoByPlaca(placaChasis);
 				Vehiculo vehiculoChasis = VehiculoDAO.getVehiculoByChasis(placaChasis);
-				
 				
 				if(vehiculoPlaca != null && opcion.equals("r")) {
 					
@@ -57,16 +55,15 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 					request.setAttribute("multasUsuario", multaByPlaca);
 					request.getRequestDispatcher("/jsp/listarMultasUsuario.jsp").forward(request, response);
 					
-					
 				}else if(vehiculoChasis != null && opcion.equals("r1")){
 					HttpSession miSesion = request.getSession();
 					miSesion.setAttribute("usuario", vehiculoChasis);
-					
 					ArrayList<Multa> multaByChasis = (ArrayList<Multa>) MultaDAO.getMultas(vehiculoChasis.getIdVehiculo());
 					request.setAttribute("multasUsuario", multaByChasis);
 					request.getRequestDispatcher("/jsp/listarMultasUsuario.jsp").forward(request, response);
+					
 				}else {
-					getServletContext().getRequestDispatcher("/jsp/consultarMultas.jsp").forward(request, response);
+					response.sendRedirect("../jsp/consultarMultas.jsp");
 				}
 	}
 
