@@ -24,7 +24,7 @@ public class PersonaDAO {
 				pstmt.setString(1, usuario);
 				pstmt.setString(2, password);
 				rs = pstmt.executeQuery();
-				if(rs != null) return true;
+				if(rs.next()) return true;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

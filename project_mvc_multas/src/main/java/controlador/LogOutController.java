@@ -24,7 +24,7 @@ public class LogOutController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("LoginController");
+		response.sendRedirect("ConsultarMultasUsuarioController");
 	}
 
 

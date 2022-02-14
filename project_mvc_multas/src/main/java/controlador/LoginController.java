@@ -31,6 +31,9 @@ public class LoginController extends HttpServlet {
 		if(PersonaDAO.autenticar(usuario, password)) {
 			response.sendRedirect("ListarVehiculosController");
 		}
+		else {
+			request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+		}
 	}
 
 }
