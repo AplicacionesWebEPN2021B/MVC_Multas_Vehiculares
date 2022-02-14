@@ -63,13 +63,9 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 					request.setAttribute("multasUsuario", multaByChasis);
 					request.getRequestDispatcher("/jsp/listarMultasUsuario.jsp").forward(request, response);
 					
-				}else if(vehiculoPlaca == null || opcion.equals("r") || vehiculoChasis == null){
-					response.sendRedirect("/jsp/consultarMultasUsuario.jsp");
-					String someMessage = "Ingrese porfavor lo datos correctos";
-					PrintWriter out = response.getWriter();
-					out.print("<html><head>");
-					out.print("<script type=\"text/javascript\">alert(" + someMessage + ");</script>");
-					out.print("</head><body></body></html>");
+				}else if(vehiculoPlaca == null || opcion.equals("") || vehiculoChasis == null){
+					response.sendRedirect("ConsultarMultasUsuarioController");
+					
 				}
 	}
 
