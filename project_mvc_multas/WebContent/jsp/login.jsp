@@ -14,7 +14,7 @@
 <body class="bg-light">
 	<div class="navbar navbar-default navbar-fixed-top bg-primary">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#"  role="navigation">Gestión de vehiculos</a>
+          <a class="navbar-brand" href="#"  role="navigation">Gestor de vehiculos</a>
           <a class="navbar-brand" href="LogOutController"  role="navigation">regresar</a>
         </div>
    	</div>

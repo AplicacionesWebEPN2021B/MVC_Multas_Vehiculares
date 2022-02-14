@@ -19,18 +19,6 @@ body{
 	font-weight: bold;
 }
 
-
-.navbar-header a{
-	text-decoration: none;
-	color: white;	
-	font-size: 20px;
-	padding: 10px;
-}
-
-.navbar-header a:hover{
-	text-decoration: none;
-	color: dark-blue;	
-}
 .content-login{
 	min-height: 80%;
 	position: relative;
