@@ -8,16 +8,10 @@
 		rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
 		crossorigin="anonymous">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login_style.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar_style.css">
 <title>Login</title>
 </head>
 <body class="bg-light">
-	<div class="navbar navbar-default navbar-fixed-top bg-primary">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#"  role="navigation">Gestor de vehiculos</a>
-          <a class="navbar-brand" href="LogOutController"  role="navigation">regresar</a>
-        </div>
-   	</div>
+	<%@include file="../templates/banner_interno.html" %>
 	
 	<div class="content-login w-100 d-flex flex-column justify-content-center align-items-center">
 		<h1>LOGIN</h1>

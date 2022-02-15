@@ -21,7 +21,7 @@
 
         <body>
 
-            <%@include file="../templates/banner_consulta.html" %>
+            <%@include file="../templates/banner_usuario.html" %>
 
 
                 <div class="content-login w-100 d-flex flex-column justify-content-center align-items-center">
