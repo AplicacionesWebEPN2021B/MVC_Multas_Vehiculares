@@ -26,26 +26,26 @@
 
                 <div class="content-login w-100 d-flex flex-column justify-content-center align-items-center">
                     <h1>Consulta de Multas Pendientes</h1>
-                    <form method="POST" action="ConsultarMultasUsuarioController">
+                    <form method="POST" action="ConsultarMultasUsuarioController" class="needs-validation" novalidate>
                         <div class="container mt-5">
                             <div class="row d-flex justify-content-center ">
-                                <div class="w-100 col-md-6">
-                                    <div class="card px-5 py-5" id="form1">
+                                <div class="w-100 col-md-6 text-center">
+                                    <div class="card px-5 py-5 text-center" id="form1">
                                         <div class="form-data">
-                                            <div class="forms-inputs mb-4">
-                                                <h3>Seleccione tipo de b&uacute;squeda</h3><br>
-                                                <input type="radio" name="placaChasis" value="r"> Placa
+                                            <div class="forms-inputs mb-4 justify-content-center align-items-center">
+                                                <h3>Seleccione Tipo de B&uacute;squeda</h3><br>
+                                                <input type="radio" name="placaChasis" value="r" checked> Placa
                                                 <input type="radio" name="placaChasis" value="r1"> Chasis
                                             </div>
-                                            <div class="forms-inputs mb-4">
-                                                <label for="txtDato">Ingrese dato</label>
+                                            <div class="forms-inputs mb-4 justify-content-center align-items-center">
+                                                <label for="txtDato">Ingrese el Dato</label>
                                                 <br>
-                                                <input type="text" name="txtPlacaChasis">
-
+                                                <input type="text" id="txtDato" class="form-control" name="txtPlacaChasis" required>
+                                                <div class="invalid-feedback">
+										        	Porfavor Ingrese un Dato.
+										      	</div>
                                             </div>
-                                            <div class="mb-3">
-                                                <input type="submit" name="consultar" value="consultar">
-                                            </div>
+                                            <button type="submit" class="btn btn-outline-primary btn-sm" name="consultar" value="consultar">Consultar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +54,25 @@
                     </form>
                 </div>
 
-
+		<script>
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		    var forms = document.getElementsByClassName('needs-validation');
+		    // Loop over them and prevent submission
+		    var validation = Array.prototype.filter.call(forms, function(form) {
+		      form.addEventListener('submit', function(event) {
+		        if (form.checkValidity() === false) {
+		          event.preventDefault();
+		          event.stopPropagation();
+		        }
+		        form.classList.add('was-validated');
+		      }, false);
+		    });
+		  }, false);
+		})();
+		</script>
         </body>
 
         </html>
