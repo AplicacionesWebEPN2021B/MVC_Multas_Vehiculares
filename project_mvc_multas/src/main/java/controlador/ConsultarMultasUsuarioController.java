@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -39,7 +40,7 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//1.- Obtengo los parametros de la vista
 				String placaChasis = request.getParameter("txtPlacaChasis");
-				String opcion = (String) request.getAttribute("placaChasis");
+				String opcion = request.getParameter("placaChasis");
 				
 				
 				//2.- Llamo al modelo para conocer si puedo autenticar 
@@ -47,7 +48,7 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 				Vehiculo vehiculoPlaca = VehiculoDAO.getVehiculoByPlaca(placaChasis);
 				Vehiculo vehiculoChasis = VehiculoDAO.getVehiculoByChasis(placaChasis);
 				
-				if(vehiculoPlaca != null && opcion == "r") {
+				if(vehiculoPlaca != null && opcion.equals("r")) {
 					
 					HttpSession miSesion = request.getSession();
 					miSesion.setAttribute("usuario", vehiculoPlaca);
@@ -55,15 +56,16 @@ public class ConsultarMultasUsuarioController extends HttpServlet {
 					request.setAttribute("multasUsuario", multaByPlaca);
 					request.getRequestDispatcher("/jsp/listarMultasUsuario.jsp").forward(request, response);
 					
-				}else if(vehiculoChasis != null && opcion == "r1"){
+				}else if(vehiculoChasis != null && opcion.equals("r1")){
 					HttpSession miSesion = request.getSession();
 					miSesion.setAttribute("usuario", vehiculoChasis);
-					ArrayList<Multa> multaByChasis = (ArrayList<Multa>) MultaDAO.getMultas(vehiculoPlaca.getIdVehiculo());
+					ArrayList<Multa> multaByChasis = (ArrayList<Multa>) MultaDAO.getMultas(vehiculoChasis.getIdVehiculo());
 					request.setAttribute("multasUsuario", multaByChasis);
 					request.getRequestDispatcher("/jsp/listarMultasUsuario.jsp").forward(request, response);
 					
-				}else {
-					response.sendRedirect("/jsp/consultarMultas.jsp");
+				}else if(vehiculoPlaca == null || opcion.equals("") || vehiculoChasis == null){
+					response.sendRedirect("ConsultarMultasUsuarioController");
+					
 				}
 	}
 
