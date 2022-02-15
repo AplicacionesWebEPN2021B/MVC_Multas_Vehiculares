@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar_style.css">
 </head>
 <body>
-	<%@include file="../templates/banner_usuario.html" %>
+	<%@include file="../templates/banner_login.html" %>
 	
 	<div class="content-login w-100 d-flex flex-column justify-content-center align-items-center">
 		<br><br>
