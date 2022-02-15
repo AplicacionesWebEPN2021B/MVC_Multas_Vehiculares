@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelo.dao.VehiculoDAO;
 import modelo.entidades.Vehiculo;
@@ -24,13 +25,18 @@ public class ListarVehiculosController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1) Llamo al modelo
+		HttpSession session = request.getSession(false);
+		Object loginString = session.getAttribute("login");
+		if (session != null  && loginString != null) {
 			VehiculoDAO vehiculoDAO = new VehiculoDAO();
 			List<Vehiculo> listaVehiculos = vehiculoDAO.getVehiculos();
 			request.setAttribute("listaVehiculos", listaVehiculos);
-			request.getRequestDispatcher("/jsp/listarVehiculos.jsp").forward(request, response);
+			request.getRequestDispatcher("/jsp/listarVehiculos.jsp").forward(request, response);			
+		}
+		else {
+			response.sendRedirect("LogOutController");
+		}
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request,response);
