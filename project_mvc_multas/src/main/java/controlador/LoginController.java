@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelo.dao.*;
 import modelo.entidades.*;
@@ -29,6 +30,9 @@ public class LoginController extends HttpServlet {
 		String usuario = request.getParameter("usuario");
 		String password = request.getParameter("password");
 		if(PersonaDAO.autenticar(usuario, password)) {
+			HttpSession session = request.getSession();
+			session.setAttribute("usuario",usuario); 
+			session.setAttribute("login","loged in"); 
 			response.sendRedirect("ListarVehiculosController");
 		}
 		else {
